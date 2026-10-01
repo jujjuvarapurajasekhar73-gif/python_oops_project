@@ -4,15 +4,47 @@ A production-grade, object-oriented inventory simulation subsystem engineered to
 
 ---
 
-## 🚀 System Architecture & Capabilities
+## 📌 Project Overview & Infrastructure Setup
+
+This project demonstrates how to build a scalable backend inventory engine utilizing core Object-Oriented Programming (OOPs) design patterns, strong type hinting profiles, defensive validation logic keys, and structured test runners.
+
+### 🔐 Environment Initialization Checklist:
+1. **GitHub Repository Creation:** Initialize a dedicated public repository named exactly `python_oops_project`.
+2. **Project Folder Architecture:** Create a root subfolder named `Inventory_System` to group module assets cleanly [mLnPGq].
+3. **Core Source File:** Instantiate a python runtime executable script file named `Solutio.py` inside the workspace folder to hold the operational class structures.
+4. **Documentation Layer:** Establish a root `README.md` file wrapper to guide rercruiters and engineers through the system architecture flowcharts [mLnPGq].
+
+---
+
+## 🚀 Step-by-Step Functional Execution Roadmap
+
+To understand or test this subsystem framework from scratch, follow this sequential execution breakdown layout:
+
+### 📥 Step 1: Object Instantiation & Database Memory Seeding
+* **Action:** The system initializes by invoking the automated constructor `__init__()` method.
+* **Backend Mechanism:** Python allocates a dedicated hardware memory block slot on the system heap grid. It pre-seeds the inventory state parameters using structured dictionary lists (`list[dict]`) holding starting asset records for Laptops, Smartphones, and Headphones cleanly.
+
+### 🛡️ Step 2: Defensive Stock Mutation Filtering
+* **Action:** Triggering sales operations or stock additions by passing target arguments to the `update_stock(item_name, quantity_change)` method.
+* **Backend Mechanism:** Python initiates a linear search sweep across the inventory array loops. 
+  * If a product match is isolated, a defensive guard clause checks if the requested change drops stock below `0`.
+  * **The Guard Gateway Law:** If stock remains valid, the change is committed. If it drops below zero, the transaction is short-circuited instantly, raising an explicit `ValueError` crash protection block to defend database integrity. If the item doesn't exist, a "Product not found" exception is thrown instead.
+
+### 🚨 Step 3: Proactive Threshold Scanning
+* **Action:** Launching logistics audits by invoking the `check_low_stock(threshold)` method helper.
+* **Backend Mechanism:** The engine runs an automated scanning sweep over the live database dictionary matrices. It measures active stock fields against a default critical danger level metric (preset to 5 units). Any struggling product is immediately transformed into a custom string warning log and returned inside an alert array stack.
+
+### 🧪 Step 4: Automated System Diagnostic Testing
+* **Action:** Running the core code pipeline execution block via the `run_oops_tests()` orchestrator function block.
+* **Backend Mechanism:** The script runs standard mock transaction traces (selling laptops, adding headphones, testing edge-case negative errors, and fetching active alerts) to verify that all OOP classes, loops, and condition gates are operating under optimal industry-standard parameters.
+
+---
+
+## 🚀 System Architecture Flowchart
 
 <details>
-<summary>💡 <b>Click to view Core Subsystem Architecture</b></summary>
+<summary>💡 <b>Click to view Core Subsystem Component Flow</b></summary>
 <br>
-
-* **Encapsulated State Databases:** The system stores the active product rows (`item_name`, `stock`, `price`) securely inside the initialized class object memory heap space.
-* **Defensive Stock Mutation Gates:** All inventory changes pass through a strict rule engine that dynamically blocks transactions if they cause stock balances to fall into negative numbers.
-* **Proactive Monitoring Alerts:** Scans the database using dynamic threshold markers to catch low stock items early and flag logistics before empty shelves happen.
 
 ```text
 📊 System Component Execution Flowchart:
@@ -34,96 +66,12 @@ A production-grade, object-oriented inventory simulation subsystem engineered to
 
 ---
 
-## 💻 Technical Execution Source Code
+## 🖥️ Expected Terminal Diagnostic Output
+
+When your custom solution code runs inside the `Solutio.py` execution thread, the active terminal runtime console should exactly match the following system diagnostic telemetry logs:
 
 <details>
-<summary>📂 <b>Click to view Verified Production Solution Code</b></summary>
-<br>
-
-```python
-class InventorySystem:
-    def __init__(self) -> None:
-        """
-        Initializes the warehouse database inside the class object.
-        """
-        self.inventory: list[dict] = [
-            {"item_name": "Laptop", "stock": 15, "price": 50000.0},
-            {"item_name": "Smartphone", "stock": 4, "price": 20000.0},
-            {"item_name": "Headphones", "stock": 25, "price": 1500.0}
-        ]
-
-    def update_stock(self, item_name: str, quantity_change: int) -> dict:
-        """
-        Updates the stock quantity of a specific item in the inventory.
-        
-        Args:
-            item_name (str): The name of the product to search.
-            quantity_change (int): The positive or negative change in stock.
-            
-        Returns:
-            dict: The updated product record.
-            
-        Raises:
-            ValueError: If stock drops below zero or the product is not found.
-        """
-        for product in self.inventory:
-            if product["item_name"] == item_name:
-                if product["stock"] + quantity_change < 0:
-                    raise ValueError("Not enough stock available.")
-                product["stock"] += quantity_change   
-                return product
-        raise ValueError("Product not found in inventory.")
-
-    def check_low_stock(self, threshold: int = 5) -> list[str]:
-        """
-        Scans the inventory and detects products falling below the threshold.
-        
-        Args:
-            threshold (int): The critical stock danger level default to 5.
-            
-        Returns:
-            list[str]: A list of warning messages for low stock items.
-        """
-        low_stock_list: list[str] = []
-        for product in self.inventory:
-            if product["stock"] < threshold:
-                low_stock_list.append(
-                    f"{product['item_name']} is running low! Only {product['stock']} left."
-                )
-        return low_stock_list
-
-
-def run_oops_tests() -> None:
-    """
-    Executes automated test cases to verify the InventorySystem class.
-    """
-    hyderabad_warehouse = InventorySystem()
-    
-    print("--- Testing Stock Updates ---")
-    print("Laptop sold 5:", hyderabad_warehouse.update_stock("Laptop", -5))
-    print("Headphones added 10:", hyderabad_warehouse.update_stock("Headphones", 10))
-
-    print("\n--- Testing Errors ---")
-    try:
-        hyderabad_warehouse.update_stock("Smartphone", -10)
-    except ValueError as error:
-        print("Expected Error:", error)
-
-    print("\n--- Low Stock Alerts ---")
-    print("Alerts:", hyderabad_warehouse.check_low_stock())
-
-
-if __name__ == "__main__":
-    run_oops_tests()
-```
-</details>
-
----
-
-## 🖥️ Active Terminal Diagnostic Output
-
-<details>
-<summary>📊 <b>Click to view Expected Runtime Console Logs</b></summary>
+<summary>📊 <b>Click to view Runtime Console Logs</b></summary>
 <br>
 
 ```text
